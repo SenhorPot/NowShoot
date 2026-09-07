@@ -1,2 +1,1 @@
-# NowShootWebPage
-webpage for nowshoot
+initialize with npx http-server .

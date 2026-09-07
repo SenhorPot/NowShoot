@@ -1,0 +1,255 @@
+<html>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        body{
+            margin:0;
+            background-color:rgb(131, 84, 27);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body::after{
+            content:"";
+            position:fixed;
+            inset:0;
+            box-shadow:inset 0 0 110px rgba(0, 0, 0, 0.3);
+            pointer-events:none;
+        }
+        .site-nav{
+            position:sticky;
+            top:0;
+            z-index:10;
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            padding:14px 20px;
+            background:rgba(76, 45, 17, 0.94);
+            border-bottom:2px solid rgba(245, 194, 107, 0.45);
+            box-shadow:0 4px 14px rgba(0, 0, 0, 0.22);
+        }
+        .nav-tab{
+            display:inline-block;
+            padding:10px 24px;
+            border:1px solid rgba(245, 194, 107, 0.7);
+            border-radius:5px;
+            color:wheat;
+            font-family:'Courier New', Courier, monospace;
+            font-size:0.95rem;
+            font-weight:bold;
+            text-decoration:none;
+            transition:background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+        }
+        .nav-tab:hover,
+        .nav-tab:focus-visible{
+            background-color:#f28a3d;
+            color:white;
+            transform:translateY(-2px);
+        }
+        .nav-tab:focus-visible{
+            outline:2px solid white;
+            outline-offset:3px;
+        }
+        #home,
+        #lancamento{
+            scroll-margin-top:78px;
+        }
+        .nav-target-highlight{
+            animation:targetHighlight 900ms ease-out;
+        }
+        @keyframes targetHighlight{
+            0%{
+                filter:drop-shadow(0 0 0 rgba(255, 193, 92, 0));
+            }
+            35%{
+                filter:drop-shadow(0 0 18px rgba(255, 193, 92, 0.9));
+            }
+            100%{
+                filter:drop-shadow(0 0 0 rgba(255, 193, 92, 0));
+            }
+        }
+        .page-content{
+            display:grid;
+            grid-template-columns:minmax(180px, 28%) 1fr;
+            gap:32px;
+            max-width:1100px;
+            margin:0 auto;
+            padding:32px;
+        }
+        .image-column{
+            display:flex;
+            flex-direction:column;
+            gap:24px;
+            padding-top:58px;
+        }
+        .image-column img{
+            display:block;
+            width:100%;
+            aspect-ratio:4 / 3;
+            object-fit:cover;
+            border:3px solid wheat;
+            background-color:rgba(0, 0, 0, 0.2);
+        }
+        .text-column{
+            min-width:0;
+        }
+        h1{
+            color:white;
+        }
+        .rolling-title{
+            display:inline-block;
+            will-change:transform;
+        }
+        h2{
+            color:wheat;
+        }
+        .beta-button{
+            display:block;
+            margin:28px auto 12px;
+            padding:14px 30px;
+            border:2px solid #f5c26b;
+            border-radius:6px;
+            background:linear-gradient(180deg, #f28a3d, #c85320);
+            box-shadow:0 5px 0 #713116, 0 10px 22px rgba(0, 0, 0, 0.3);
+            color:white;
+            cursor:pointer;
+            font-family:'Courier New', Courier, monospace;
+            font-size:1rem;
+            font-weight:bold;
+            letter-spacing:0.06em;
+            text-transform:uppercase;
+            transition:transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+        }
+        .beta-button:hover{
+            filter:brightness(1.12);
+            transform:translateY(-2px);
+            box-shadow:0 7px 0 #713116, 0 13px 25px rgba(0, 0, 0, 0.35);
+        }
+        .beta-button:active{
+            transform:translateY(3px);
+            box-shadow:0 2px 0 #713116, 0 6px 14px rgba(0, 0, 0, 0.25);
+        }
+        .beta-button:focus-visible{
+            outline:3px solid white;
+            outline-offset:4px;
+        }
+    </style>
+    <body>
+        <nav class="site-nav" aria-label="Navegação principal">
+            <a class="nav-tab" href="#home">Home</a>
+            <a class="nav-tab" href="#betatest">Beta Test</a>
+            <a class="nav-tab" href="#lancamento">Release Date</a>
+        </nav>
+        <main id="home" class="page-content">
+            <aside class="image-column" aria-label="Game images">
+                <img src="1.png" alt="Placeholder for a NowShoot image">
+                <img src="2.png" alt="Placeholder for a NowShoot image">
+                <img src="3.png" alt="Placeholder for a NowShoot image">
+            </aside>
+            <section class="text-column">
+                <center>
+                    <h1 class="rolling-title">NowShoot</h1>
+                </center>
+            <h2>NowShoot is an game made by SenhorPot</h2>
+            <h2>with the premise of an game thats</h2>
+            <h2>about shooting bandits to gain points</h2>
+            <h2>those points are divided by 10 for calculating the total gold</h2>
+            <h2>then those gold can be used to purchase skins in the game</h2>
+            <br>
+            <br>
+            <br>
+            <h2>It is an Indie game being developed in Brazil</h2>
+            <h2>By only one person, and the style of art</h2>
+            <h2>in the game is Pixelart primarily</h2>
+            <h2>it is entirely in 2d and being developed on</h2>
+            <h2>Godot GdScript</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2>Its gonna be released on Android and Windows</h2>
+            <h2>it will not release for IOS or MAC since apple</h2>
+            <h2>charges 100$ a year for publishing an app</h2>
+            <h2>And has to have a Mac to publish an game</h2>
+            </section>
+        </main>
+        <br>
+        <br>
+        <br>
+        <section id="betatest">
+        <center>
+            <h2>NowShoot is a game that is still in development</h2>
+            <h2>but it has an beta test that only accepted people can enter it</h2>
+            <h2>im needing about 50 people in the playtest so if you can fill this out!</h2>
+            <h2>it has 10 skins for now and 3 difficultys so i think you should give it a try!</h2>
+            <h2>also people that entered the beta test will receive an early android acess</h2>
+            <h2>for suggestions, bug reports, and feedback! so its really great to get your beta test</h2>
+            <h2>if you want to enter the beta test, click the button below!</h2>
+            #link for forms if you cant click on the button https://forms.gle/QyAFWuZsPeZ6aqKw8
+            <button class="beta-button" type="button" onclick="window.location.href='https://forms.gle/QyAFWuZsPeZ6aqKw8';">Fill out the form</button>
+        </center>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section id="lancamento">
+        <center>
+            <h2>NowShoot is an game that is still in development</h2>
+            <h2>but it has a release date that is set to 2027</h2>
+            <h2>because i have to implement a bunch of things in the game</h2>
+            <h2>and i have to make a lot of content for it</h2>
+            <h2>for now it will have no updates regarding the progress</h2>
+            <h2>because im lazy to make videos right now</h2>
+            <h2>but any time i want to showcase anything about the game</h2>
+            <h2>it will be posted on my youtube channel below</h2>
+            <button class="beta-button" type="button" onclick="window.location.href='https://www.youtube.com/@SenhorPot';">YOUTUBE</button>
+        </center>
+        </section>
+        <script>
+            const rollingTitle = document.querySelector('.rolling-title');
+
+            function rollTitleToCenter(){
+                if (!rollingTitle || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+                    return;
+                }
+
+                const titleBox = rollingTitle.getBoundingClientRect();
+                const finalOffset = (window.innerWidth / 2) - (titleBox.left + titleBox.width / 2);
+
+                rollingTitle.animate([
+                    { transform:'translateX(-100vw) rotate(-8deg)' },
+                    { transform:`translateX(${finalOffset}px) rotate(0deg)` }
+                ], {
+                    duration:1800,
+                    easing:'cubic-bezier(0.22, 1, 0.36, 1)',
+                    fill:'forwards'
+                });
+            }
+
+            window.addEventListener('load', rollTitleToCenter, { once:true });
+
+            document.querySelectorAll('.site-nav a[href^="#"]').forEach((navLink) => {
+                navLink.addEventListener('click', (event) => {
+                    const target = document.querySelector(navLink.getAttribute('href'));
+
+                    if (!target){
+                        return;
+                    }
+
+                    event.preventDefault();
+                    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                    target.scrollIntoView({
+                        behavior:reduceMotion ? 'auto' : 'smooth',
+                        block:'center'
+                    });
+
+                    target.classList.remove('nav-target-highlight');
+                    void target.offsetWidth;
+                    target.classList.add('nav-target-highlight');
+                    window.history.pushState(null, '', navLink.getAttribute('href'));
+                });
+            });
+        </script>
+    </body>
+</html>
